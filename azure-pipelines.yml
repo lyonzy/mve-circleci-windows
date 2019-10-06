@@ -22,5 +22,7 @@ steps:
     cmake --build 3rdparty --config Release
     cmake .
     cmake --build . --config Release
+    tree /F
     cmake --build . --target PACKAGE
+    tree /F
   displayName: 'Build MVE'
