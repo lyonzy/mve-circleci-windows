@@ -5,9 +5,9 @@ script:
     - git clone https://github.com/andre-schulz/mve.git
     - cd mve
     - git checkout remotes/origin/cmake
-    - cmake --build 3rdparty
+    - cmake 3rdparty
     - msbuild 3rdparty.sln /target:Release
     - cd ../
-    - cmake --build mve
+    - cmake mve
     - msbuild MVE.sln /target:Release
     - cmake --build . --target PACKAGE
