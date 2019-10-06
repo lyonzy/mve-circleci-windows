@@ -11,10 +11,10 @@ pool:
 
 steps:
 - script: |
-    cmake --help
-    set CMAKE_GENERATOR_PLATFORM=x64
+    rem cmake --help
+    set CMAKE_GENERATOR="Visual Studio 15 2017 Win64"
     set MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
-    export PATH=$MSBUILD_PATH:$PATH
+    rem set PATH=$MSBUILD_PATH:$PATH
     git clone https://github.com/andre-schulz/mve.git
     cd mve
     git checkout remotes/origin/cmake
