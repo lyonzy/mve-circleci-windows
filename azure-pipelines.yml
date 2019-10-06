@@ -13,6 +13,7 @@ steps:
 - script: |
     rem cmake --help
     set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
+    set CMAKE_GENERATOR_TOOLSET=host=x64
     set MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin"
     set CMAKE_MAKE_PROGRAM=%MSBUILD_PATH%
     git clone https://github.com/lyonzy/mve.git
