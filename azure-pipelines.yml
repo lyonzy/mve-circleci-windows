@@ -25,6 +25,7 @@ steps:
     dir
     cd mve
     cmake .
+    cmake --build . --config Release
     cd ..
     tree /F
     %MSBUILD_PATH%\msbuild.exe mve.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
