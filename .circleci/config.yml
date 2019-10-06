@@ -1,0 +1,21 @@
+version: 2.1
+
+orbs:
+  win: circleci/windows@1.0.0
+
+jobs:
+  build:
+    executor:
+      name: win/vs2019
+      shell: bash.exe
+    steps:
+      - run: git clone https://github.com/andre-schulz/mve.git
+      - run: cd mve
+      - run: git checkout remotes/origin/cmake
+      - run: cd 3rdparty
+      - run: cmake --build .
+      - run: msbuild 3rdparty.sln /target:Release
+      - run: cd ../mve
+      - run: cmake --build .
+      - run: msbuild MVE.sln /target:Release
+      - run: cmake --build . --target PACKAGE
