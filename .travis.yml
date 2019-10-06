@@ -10,8 +10,8 @@ script:
     - cd mve
     - git checkout remotes/origin/cmake
     - cmake 3rdparty
-    - msbuild.exe 3rdparty.sln /property:Configuration=Release /m:4 /p:BuildInParallel=true
+    - msbuild.exe 3rdparty.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
     - cd ../
     - cmake mve
-    - msbuild.exe MVE.sln /property:Configuration=Release /m:4 /p:BuildInParallel=true
+    - msbuild.exe MVE.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
     - cmake --build . --target PACKAGE
