@@ -10,8 +10,8 @@ script:
     - cd mve
     - git checkout remotes/origin/cmake
     - cmake 3rdparty
-    - msbuild 3rdparty.sln /target:Release
+    - msbuild.exe 3rdparty.sln /target:Release
     - cd ../
     - cmake mve
-    - msbuild MVE.sln /target:Release
+    - msbuild.exe MVE.sln /target:Release
     - cmake --build . --target PACKAGE
