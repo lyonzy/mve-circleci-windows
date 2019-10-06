@@ -15,19 +15,12 @@ steps:
     set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
     set CMAKE_GENERATOR_TOOLSET=host=x64
     set MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin"
-    set CMAKE_MAKE_PROGRAM=%MSBUILD_PATH%
-    git clone https://github.com/lyonzy/mve.git
+    git clone https://github.com/andre-schulz/mve.git
     cd mve
     git checkout remotes/origin/cmake
     cmake 3rdparty
-    rem %MSBUILD_PATH%\msbuild.exe 3rdparty.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
-    cd ..
-    dir
-    cd mve
+    cmake --build 3rdparty --config Release
     cmake .
     cmake --build . --config Release
-    cd ..
-    tree /F
-    %MSBUILD_PATH%\msbuild.exe mve.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
     cmake --build . --target PACKAGE
   displayName: 'Build MVE'
