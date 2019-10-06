@@ -2,7 +2,7 @@ os: windows
 language: cpp
 
 env:
-    - CMAKE_GENERATOR_PLATFORM=x64 
+    - CMAKE_GENERATOR='Visual Studio 12 2013 Win64'
 
 script:
     - git clone https://github.com/andre-schulz/mve.git
