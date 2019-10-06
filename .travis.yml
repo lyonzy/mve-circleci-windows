@@ -1,0 +1,13 @@
+os: windows
+
+script:
+    - git clone https://github.com/andre-schulz/mve.git
+    - cd mve
+    - git checkout remotes/origin/cmake
+    - cd 3rdparty
+    - cmake --build .
+    - msbuild 3rdparty.sln /target:Release
+    - cd ../mve
+    - cmake --build .
+    - msbuild MVE.sln /target:Release
+    - cmake --build . --target PACKAGE
