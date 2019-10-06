@@ -18,8 +18,11 @@ steps:
     cd mve
     git checkout remotes/origin/cmake
     cmake 3rdparty
-    %MSBUILD_PATH%\msbuild.exe 3rdparty.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
+    rem %MSBUILD_PATH%\msbuild.exe 3rdparty.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
+    cd ..
     cmake mve
+    dir
+    cd mve
     dir
     %MSBUILD_PATH%\msbuild.exe mve.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
     cmake --build . --target PACKAGE
