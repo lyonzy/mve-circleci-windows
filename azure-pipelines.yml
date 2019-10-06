@@ -21,6 +21,7 @@ steps:
     %MSBUILD_PATH%\msbuild.exe 3rdparty.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
     cd ../
     cmake mve
-    %MSBUILD_PATH%\msbuild.exe MVE.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
+    dir
+    %MSBUILD_PATH%\msbuild.exe mve.sln /property:Configuration=Release /maxcpucount /property:BuildInParallel=true
     cmake --build . --target PACKAGE
   displayName: 'Build MVE'
