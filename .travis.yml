@@ -9,7 +9,9 @@ script:
      - cd mve
      - git checkout remotes/origin/cmake
      - cmake 3rdparty
-     - cmake --build 3rdparty --config Release
+     - cd 3rdparty
+     - cmake --build . --config Release
+     - cd ..
      - cmake .
      - cmake --build . --config Release
      - cmake --build . --target PACKAGE
