@@ -8,8 +8,9 @@ script:
      - git clone https://github.com/lyonzy/mve.git
      - cd mve
      - git checkout remotes/origin/cmake
-     - cmake 3rdparty
      - cd 3rdparty
+     - cmake .
+     - ls
      - cmake --build . --config Release
      - cd ..
      - cmake .
