@@ -28,5 +28,5 @@ steps:
   displayName: 'Build MVE'
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: 'build/'
+    pathtoPublish: 'mve/'
     artifactName: MVE
