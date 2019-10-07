@@ -16,3 +16,4 @@ script:
      - cmake .
      - cmake --build . --config Release
      - cmake --build . --target PACKAGE
+     - tree /F
