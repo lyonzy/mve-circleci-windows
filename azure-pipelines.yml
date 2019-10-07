@@ -26,7 +26,7 @@ steps:
     rem cmake --build . --target PACKAGE
     rem tree /F
   displayName: 'Build MVE'
-- task: PublishBuildArtifacts
+- task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: 'build/'
     artifactName: MVE
