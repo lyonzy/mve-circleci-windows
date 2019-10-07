@@ -23,6 +23,10 @@ steps:
     cmake .
     cmake --build . --config Release
     rem tree /F
-    cmake --build . --target PACKAGE
+    rem cmake --build . --target PACKAGE
     rem tree /F
   displayName: 'Build MVE'
+- task: PublishBuildArtifacts
+  inputs:
+    pathtoPublish: 'build/'
+    artifactName: MVE
