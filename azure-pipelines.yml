@@ -10,7 +10,8 @@ pool:
   vmImage: 'vs2017-win2016'
   timeoutInMinutes: 0
 
-TimeoutInMinutes: 90
+job:
+  timeoutInMinutes: 90
 
 steps:
 - script: |
