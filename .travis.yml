@@ -15,5 +15,5 @@ script:
      - cd ..
      - cmake .
      - cmake --build . --config Release
-     - cmake --build . --target PACKAGE
+     - cmake --build . --target PACKAGE --config Release
      - tree /F
