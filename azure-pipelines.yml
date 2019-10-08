@@ -14,19 +14,18 @@ steps:
     rem cmake --help
     set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
     set CMAKE_GENERATOR_TOOLSET=host=x64
-    set MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin"
-    git clone https://github.com/andre-schulz/mve.git
+    git clone https://github.com/lyonzy/mve.git
     cd mve
     git checkout remotes/origin/cmake
-    cmake 3rdparty
-    cmake --build 3rdparty --config Release
+    cd 3rdparty
     cmake .
     cmake --build . --config Release
-    rem tree /F
-    rem cmake --build . --target PACKAGE
-    rem tree /F
+    cd ..
+    cmake .
+    cmake --build . --config Release
+    cmake --build . --target PACKAGE --config Release
   displayName: 'Build MVE'
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: 'mve/'
+    pathtoPublish: 'mve/MVE-0.1.1-win64.zip'
     artifactName: MVE
