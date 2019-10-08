@@ -11,7 +11,7 @@ pool:
   timeoutInMinutes: 0
 
 jobs:
-  - job: Build MVE
+  - job: BuildMVE
     timeoutInMinutes: 90
     steps:
     - script: |
