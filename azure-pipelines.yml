@@ -25,6 +25,7 @@ steps:
     cmake --build . --config Release
     cmake --build . --target PACKAGE --config Release
   displayName: 'Build MVE'
+  timeoutInMinutes: 0
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: 'mve/MVE-0.1.1-win64.zip'
